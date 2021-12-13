@@ -1,20 +1,21 @@
-//your code here
+ArrayList <Particle> myPs = new ArrayList <Particle> ();
+
 void setup()
 {
-	//your code here
+  size(500, 500);
+  for (int i = 0; i < 200; i ++)
+  {
+    myPs.add(new Particle((int) (Math.random() * 500), (int) (Math.random() * 500), 15, 1));
+  }
+  myPs.add(new OddballParticle((int) (Math.random() * 500), (int) (Math.random() * 500), 10, 1));
 }
 void draw()
 {
-	//your code here
+  background(0);
+  for (Particle p : myPs)
+  {
+    p.move();
+    p.show();
+    p.breath();
+  }
 }
-class Particle
-{
-	//your code here
-}
-
-class OddballParticle //inherits from Particle
-{
-	//your code here
-}
-
-
